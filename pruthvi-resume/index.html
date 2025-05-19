@@ -9,94 +9,84 @@
         .container { max-width: 900px; margin: auto; background: #fff; padding: 32px 40px; border-radius: 10px; box-shadow: 0 2px 12px #0001; }
         h1 { margin-bottom: 0; }
         h2 { color: #2a4d7a; margin-top: 32px; }
-        .profile-highlight {
-            background: #b3d1ea;
-            border-radius: 8px;
-            padding: 18px 22px;
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            margin-bottom: 32px;
-        }
-        .contact { text-align: right; font-size: 0.98em; }
-        .section-title { font-weight: bold; margin-top: 32px; font-size: 1.15em; }
-        ul { margin-top: 0.3em; }
-        table { border-collapse: collapse; width: 100%; margin-top: 0.5em; }
-        th, td { border: 1px solid #bbb; padding: 6px 10px; text-align: left; }
-        th { background: #e9ecef; }
-        .name-title { font-size: 1.5em; font-weight: bold; }
-        .subtitle { font-size: 1.1em; color: #2a4d7a; }
-        a { color: #2a4d7a; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .page-break { page-break-before: always; }
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .profile-row {
+        .profile-banner {
+            background: #b3cbe6;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
+            padding: 18px 22px 18px 12px;
             margin-bottom: 32px;
-            gap: 24px;
         }
         .profile-left {
             display: flex;
-            align-items: center;
-            gap: 22px;
+            align-items: flex-start;
+            gap: 18px;
         }
         .profile-photo {
             width: 110px;
             height: 130px;
-            border-radius: 12px;
-            border: 3px solid #222;
-            box-shadow: 2px 2px 8px #0002;
+            border-radius: 8px;
+            border: none;
             object-fit: cover;
+            background: #fff;
+        }
+        .profile-info {
+            color: #111;
         }
         .profile-info .name-title {
-            font-size: 2em;
+            font-size: 1.35em;
             font-weight: bold;
-            margin-bottom: 4px;
-        }
-        .profile-info .subtitle {
-            font-size: 1.15em;
-            color: #2a4d7a;
+            color: #111;
             margin-bottom: 2px;
         }
-        .profile-info .subtitle2 {
+        .profile-info .profile-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 2px;
+        }
+        .profile-info .profile-title2 {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 2px;
+        }
+        .profile-info .profile-stack {
             font-size: 1.05em;
-            color: #2a4d7a;
+            font-weight: bold;
+            color: #111;
         }
         .profile-contact {
-            text-align: right;
+            text-align: left;
             font-size: 1.05em;
-            color: #2a4d7a;
+            color: #111;
             min-width: 270px;
-            margin-top: 8px;
+            margin-top: 2px;
         }
+        .profile-contact a { color: #1a4d8a; }
         @media (max-width: 700px) {
-            .profile-row { flex-direction: column; gap: 12px; }
+            .profile-banner { flex-direction: column; gap: 10px; }
             .profile-contact { text-align: left; margin-top: 10px; }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="profile-row">
+    <div class="profile-banner">
         <div class="profile-left">
             <img src="pruthvi.png" alt="Pruthvi Raj Darapu" class="profile-photo">
             <div class="profile-info">
                 <div class="name-title">Pruthvi Raj Darapu</div>
-                <div class="subtitle">AWS Certified Solutions Architect (Associate)</div>
-                <div class="subtitle">Cloud Operations Engineer</div>
-                <div class="subtitle2">(AWS, AZURE, Jenkins, Ansible, Terraform)</div>
+                <div class="profile-title">AWS Certified Solutions Architect (Associate)</div>
+                <div class="profile-title2">Cloud Operations Engineer</div>
+                <div class="profile-stack">(AWS, AZURE, Jenkins, Ansible, Terraform)</div>
             </div>
         </div>
         <div class="profile-contact">
             Email: <a href="mailto:pruthvirajdarapu@gmail.com">pruthvirajdarapu@gmail.com</a><br>
             Address: Vijayawada, Andhra Pradesh, India<br>
             Phone: +91 9492246177<br>
+            <br>
             LinkedIn: <a href="https://www.linkedin.com/in/pruthviraj0808/" target="_blank">https://www.linkedin.com/in/pruthviraj0808/</a>
         </div>
     </div>
