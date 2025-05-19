@@ -9,7 +9,15 @@
         .container { max-width: 900px; margin: auto; background: #fff; padding: 32px 40px; border-radius: 10px; box-shadow: 0 2px 12px #0001; }
         h1 { margin-bottom: 0; }
         h2 { color: #2a4d7a; margin-top: 32px; }
-        .header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .profile-highlight {
+            background: #b3d1ea;
+            border-radius: 8px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-bottom: 32px;
+        }
         .contact { text-align: right; font-size: 0.98em; }
         .section-title { font-weight: bold; margin-top: 32px; font-size: 1.15em; }
         ul { margin-top: 0.3em; }
@@ -26,32 +34,70 @@
             align-items: center;
             gap: 20px;
         }
-        @media (max-width: 600px) {
-            .container { padding: 12px; }
-            .header { flex-direction: column; align-items: flex-start; }
-            .contact { text-align: left; margin-top: 10px; }
+        .profile-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            gap: 24px;
+        }
+        .profile-left {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+        .profile-photo {
+            width: 110px;
+            height: 130px;
+            border-radius: 12px;
+            border: 3px solid #222;
+            box-shadow: 2px 2px 8px #0002;
+            object-fit: cover;
+        }
+        .profile-info .name-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .profile-info .subtitle {
+            font-size: 1.15em;
+            color: #2a4d7a;
+            margin-bottom: 2px;
+        }
+        .profile-info .subtitle2 {
+            font-size: 1.05em;
+            color: #2a4d7a;
+        }
+        .profile-contact {
+            text-align: right;
+            font-size: 1.05em;
+            color: #2a4d7a;
+            min-width: 270px;
+            margin-top: 8px;
+        }
+        @media (max-width: 700px) {
+            .profile-row { flex-direction: column; gap: 12px; }
+            .profile-contact { text-align: left; margin-top: 10px; }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="header">
-        <div class="profile-header">
-            <img src="pruthvi.png" alt="Pruthvi Raj Darapu" style="width:100px;height:120px;border-radius:8px;">
-            <div>
+    <div class="profile-row">
+        <div class="profile-left">
+            <img src="pruthvi.png" alt="Pruthvi Raj Darapu" class="profile-photo">
+            <div class="profile-info">
                 <div class="name-title">Pruthvi Raj Darapu</div>
-                <div class="subtitle">
-                    AWS Certified Solutions Architect (Associate)<br>
-                    Cloud Operations Engineer<br>
-                    (AWS, AZURE, Jenkins, Ansible, Terraform)
-                </div>
+                <div class="subtitle">AWS Certified Solutions Architect (Associate)</div>
+                <div class="subtitle">Cloud Operations Engineer</div>
+                <div class="subtitle2">(AWS, AZURE, Jenkins, Ansible, Terraform)</div>
             </div>
         </div>
-        <div class="contact">
-            <div>Email: <a href="mailto:pruthvirajdarapu@gmail.com">pruthvirajdarapu@gmail.com</a></div>
-            <div>Address: Vijayawada, Andhra Pradesh, India</div>
-            <div>Phone: +91 9492246177</div>
-            <div>LinkedIn: <a href="https://www.linkedin.com/in/pruthviraj0808/" target="_blank">https://www.linkedin.com/in/pruthviraj0808/</a></div>
+        <div class="profile-contact">
+            Email: <a href="mailto:pruthvirajdarapu@gmail.com">pruthvirajdarapu@gmail.com</a><br>
+            Address: Vijayawada, Andhra Pradesh, India<br>
+            Phone: +91 9492246177<br>
+            LinkedIn: <a href="https://www.linkedin.com/in/pruthviraj0808/" target="_blank">https://www.linkedin.com/in/pruthviraj0808/</a>
         </div>
     </div>
 
