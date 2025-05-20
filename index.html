@@ -9,8 +9,15 @@
         .container { max-width: 900px; margin: auto; background: #fff; padding: 32px 40px; border-radius: 10px; box-shadow: 0 2px 12px #0001; }
         h1 { margin-bottom: 0; }
         h2 { color: #2a4d7a; margin-top: 32px; }
-        .header { display: flex; justify-content: space-between; align-items: flex-start; }
-        .contact { text-align: right; font-size: 0.98em; }
+        .header { display: flex; justify-content: space-between; align-items: center; } /* changed from flex-start to center */
+        .contact { 
+            text-align: left; 
+            font-size: 0.98em; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 6px;
+            margin-left: 40px;
+        }
         .section-title { font-weight: bold; margin-top: 32px; font-size: 1.15em; }
         ul { margin-top: 0.3em; }
         table { border-collapse: collapse; width: 100%; margin-top: 0.5em; }
