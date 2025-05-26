@@ -26,8 +26,25 @@ a:hover { text-decoration: underline; }
     align-items: center;
     gap: 20px;
 }
+.profile-banner {
+    background: #b3d1ea;
+    padding: 18px 24px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    color: #111;
+}
+.profile-banner .name-title,
+.profile-banner .subtitle,
+.profile-banner .contact a,
+.profile-banner .contact {
+    color: #111;
+}
+.profile-banner .contact a {
+    text-decoration: underline;
+}
 @media (max-width: 600px) {
     .container { padding: 12px; }
     .header { flex-direction: column; align-items: flex-start; }
     .contact { text-align: left; margin-top: 10px; }
+    .profile-banner { padding: 10px 6px; }
 }
