@@ -184,6 +184,32 @@
         }
         .stat-card .label { font-size: 0.85rem; color: var(--text-muted); }
 
+        /* Leadership highlights */
+        .leadership {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+        }
+        .lead-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.2s;
+        }
+        .lead-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .lead-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+        .lead-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
         /* Experience */
         .timeline { position: relative; }
         .timeline::before {
@@ -296,6 +322,7 @@
                 <span>AWS Solutions Architect</span>
                 <span>Terraform</span>
                 <span>Kubernetes</span>
+                <span>GitOps / Argo CD</span>
                 <span>FinOps</span>
                 <span>Python</span>
                 <span>Multi-Cloud</span>
@@ -312,28 +339,47 @@
         <div class="stats">
             <div class="stat-card">
                 <div class="number">8+</div>
-                <div class="label">Years Experience</div>
+                <div class="label">Years in Cloud &amp; DevOps</div>
             </div>
             <div class="stat-card">
                 <div class="number">$90K+</div>
-                <div class="label">Cloud Savings Delivered</div>
+                <div class="label">Annual Cloud Savings Delivered</div>
             </div>
             <div class="stat-card">
-                <div class="number">15+</div>
-                <div class="label">Terraform Modules</div>
+                <div class="number">99.99%</div>
+                <div class="label">Platform Availability</div>
             </div>
             <div class="stat-card">
-                <div class="number">30+</div>
-                <div class="label">AWS Services</div>
+                <div class="number">4</div>
+                <div class="label">Environments Managed via GitOps</div>
             </div>
         </div>
         <div class="section-header">
             <h2>About</h2>
             <p>Building scalable cloud infrastructure that drives business value</p>
         </div>
-        <p style="text-align:center; max-width:750px; margin:0 auto; color:var(--text-muted); font-size:0.95rem;">
-            Results-driven Cloud & DevOps Leader with progressive experience scaling infrastructure, driving measurable cloud savings, and leading cross-functional engineering teams across international, distributed environments. Currently overseeing Cloud Infrastructure, DevOps, Data Engineering, and IT Operations for a Singapore-headquartered fintech company. Deep hands-on experience with AWS, Azure, Kubernetes, Terraform, and serverless architectures.
+        <p style="text-align:center; max-width:770px; margin:0 auto; color:var(--text-muted); font-size:0.95rem;">
+            Cloud &amp; DevOps leader with 8+ years building and running infrastructure at scale, now owning Cloud, DevOps, Data Engineering and IT Operations end-to-end for a Singapore-HQ fintech. Track record of turning cost, reliability, and delivery into measurable outcomes — $90K+ in annualized cloud savings, 99.99% availability, and GitOps-driven automation that replaced manual, error-prone operations. I set the technical direction, raise the engineering bar through standards and review, and lead distributed teams to ship safely. Deep hands-on command of AWS, Azure, Kubernetes, Terraform, Argo CD, and serverless.
         </p>
+
+        <div class="leadership">
+            <div class="lead-card">
+                <h4>Team Leadership</h4>
+                <p>Lead 5-engineer distributed teams across multiple timezones — hiring bar, mentoring, and on-call culture</p>
+            </div>
+            <div class="lead-card">
+                <h4>Technical Direction</h4>
+                <p>Set the cloud, GitOps, and IaC standards; drive architecture and design reviews end-to-end</p>
+            </div>
+            <div class="lead-card">
+                <h4>Business Impact</h4>
+                <p>Own FinOps and reliability as outcomes — $90K+ saved annually at 99.99% availability</p>
+            </div>
+            <div class="lead-card">
+                <h4>Safe Delivery</h4>
+                <p>Replaced manual production operations with reviewed, auditable, automated workflows</p>
+            </div>
+        </div>
     </section>
 
     <section id="experience">
@@ -347,16 +393,18 @@
                 <h3>Associate Director – Cloud, DevOps, Data & IT Operations</h3>
                 <div class="company">Olea Global Pte. Ltd, Singapore (Remote from Hyderabad)</div>
                 <ul>
-                    <li>Led cost optimization achieving $90K+ annualized savings ($7,500/month validated reduction)</li>
-                    <li>Built automated cert renewal system (Lambda + Microsoft Graph API) deploying SSL certs to 22 Azure AD apps</li>
-                    <li>Designed zero-touch data patch execution pipeline: Jira approval → GitHub Actions → self-hosted runner → RDS</li>
+                    <li>Own the cloud, DevOps, data engineering and IT operations function end-to-end for a Singapore-HQ fintech, leading a 5-engineer distributed, multi-timezone team</li>
+                    <li>Led cost optimization achieving $90K+ annualized savings ($7,500/month validated reduction) through FinOps governance, right-sizing, and Savings Plans</li>
+                    <li>Established a GitOps operating model with Argo CD, making cluster state declarative, reviewable, and auditable across dev/preprod/prod</li>
+                    <li>Built automated Terraform drift detection as an Argo CD-managed Kubernetes CronJob across all environments, with tiered alerting that separates real infrastructure drift from noise and reports to GitHub/Jira</li>
+                    <li>Re-architected the data-patch pipeline to a safe, auditable model — a reviewed/merged Git PR triggers an ephemeral Kubernetes Job that runs the change in a single transaction with automatic rollback, verification assertions, and a full audit trail (replacing a legacy always-on runner)</li>
                     <li>Deployed Langfuse AI observability platform on EKS — first AI/ML tooling in the organization</li>
-                    <li>Implemented pod restart alerting with auto Jira ticket creation (Prometheus → Alertmanager → custom webhook)</li>
-                    <li>Architected QuickSight Cost Intelligence Dashboard with Athena & CUR 2.0</li>
-                    <li>Authored 15+ reusable Terraform modules across dev/preprod/prod with drift detection</li>
-                    <li>Built CloudWatch log archive automation (Lambda + Step Functions + S3 Glacier lifecycle)</li>
-                    <li>Designed automated RDS Refresh Pipeline using Step Functions</li>
-                    <li>Drove OS patching automation, FinOps governance, and infrastructure compliance</li>
+                    <li>Built an automated certificate renewal system (Lambda + Microsoft Graph API) deploying SSL certs to 22 Azure AD applications</li>
+                    <li>Implemented pod-restart and service-health alerting with automatic Jira ticket creation (Prometheus → Alertmanager → custom webhook)</li>
+                    <li>Architected a QuickSight Cost Intelligence dashboard on Athena & CUR 2.0 for executive cost visibility</li>
+                    <li>Authored 15+ reusable Terraform modules across dev/preprod/prod as the team's IaC standard</li>
+                    <li>Built CloudWatch log-archive automation (Lambda + Step Functions + S3 Glacier lifecycle) and an automated RDS refresh pipeline (Step Functions)</li>
+                    <li>Set engineering standards and review practices for OS patching automation, FinOps governance, and infrastructure compliance</li>
                 </ul>
             </div>
             <div class="timeline-item">
@@ -364,10 +412,10 @@
                 <h3>Cloud Operations Engineer</h3>
                 <div class="company">Tango Analytics, Dallas TX, USA (Remote)</div>
                 <ul>
-                    <li>Designed AWS infrastructure achieving 99.99% availability, 30% less downtime</li>
-                    <li>Led team of 5 engineers in CI/CD automation, improving deployment efficiency by 40%</li>
-                    <li>Managed ECS Fargate workloads with blue-green and canary deployment strategies</li>
-                    <li>Implemented Security Hub, GuardDuty, and SOC 2/GDPR compliance controls</li>
+                    <li>Led a 5-engineer team, owning CI/CD modernization that improved deployment efficiency by 40%</li>
+                    <li>Architected AWS infrastructure delivering 99.99% availability and cutting downtime by 30%</li>
+                    <li>Ran ECS Fargate workloads with blue-green and canary release strategies for safe, zero-downtime deploys</li>
+                    <li>Implemented Security Hub, GuardDuty, and SOC 2 / GDPR compliance controls across the estate</li>
                 </ul>
             </div>
             <div class="timeline-item">
@@ -375,9 +423,9 @@
                 <h3>Senior Site Reliability Engineer</h3>
                 <div class="company">Gemini Intergalactic Pvt Ltd, Gurugram</div>
                 <ul>
-                    <li>Automated infrastructure with Ansible across AWS & Azure, 80% less manual config</li>
-                    <li>Deployed ELK Stack for centralized logging, cutting costs 30%</li>
-                    <li>Led cloud migration to Kubernetes with SRE practices (SLI/SLO, error budgets)</li>
+                    <li>Led a cloud migration to Kubernetes and introduced SRE practice (SLIs/SLOs, error budgets) to the team</li>
+                    <li>Automated infrastructure with Ansible across AWS &amp; Azure, eliminating 80% of manual configuration</li>
+                    <li>Stood up centralized logging on the ELK Stack, cutting logging costs by 30%</li>
                 </ul>
             </div>
             <div class="timeline-item">
@@ -385,10 +433,10 @@
                 <h3>DevOps Engineer</h3>
                 <div class="company">Infinity Infra, Hyderabad</div>
                 <ul>
-                    <li>Built CI/CD pipelines (Jenkins, GitHub Actions, Docker) reducing deploy time 60%</li>
-                    <li>Managed Terraform/CloudFormation across 10+ environments</li>
-                    <li>Spearheaded cost optimization saving ~$50K annually</li>
-                    <li>Integrated Prometheus, Grafana, ELK for full-stack observability</li>
+                    <li>Spearheaded cost optimization saving ~$50K annually across cloud workloads</li>
+                    <li>Built CI/CD pipelines (Jenkins, GitHub Actions, Docker) that cut deploy time by 60%</li>
+                    <li>Managed Terraform / CloudFormation across 10+ environments as infrastructure-as-code standard</li>
+                    <li>Delivered full-stack observability with Prometheus, Grafana, and the ELK Stack</li>
                 </ul>
             </div>
             <div class="timeline-item">
@@ -396,9 +444,9 @@
                 <h3>Operations Engineer</h3>
                 <div class="company">Wells Fargo EGS, Hyderabad</div>
                 <ul>
-                    <li>Administered 200+ Linux servers with 99.9% uptime</li>
-                    <li>Reduced MTTR by 50% through incident management and runbook automation</li>
-                    <li>Built Nagios/Splunk monitoring dashboards, 35% fewer unplanned outages</li>
+                    <li>Administered a 200+ Linux server estate at 99.9% uptime in a regulated banking environment</li>
+                    <li>Cut MTTR by 50% through stronger incident management and runbook automation</li>
+                    <li>Built Nagios/Splunk monitoring that reduced unplanned outages by 35%</li>
                 </ul>
             </div>
         </div>
@@ -425,6 +473,10 @@
             <div class="skill-card">
                 <h4>Containers & Orchestration</h4>
                 <p>Docker, Kubernetes, EKS, ECS Fargate, Helm</p>
+            </div>
+            <div class="skill-card">
+                <h4>GitOps & Delivery</h4>
+                <p>Argo CD, Kustomize, GitHub Actions, trunk/PR-based workflows, progressive delivery</p>
             </div>
             <div class="skill-card">
                 <h4>Observability</h4>
